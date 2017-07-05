@@ -1,0 +1,13 @@
+[0511/111503:ERROR:process_reader_win.cc(142)] SuspendThread: Access is denied. (0x5)
+[0511/111503:ERROR:process_reader_win.cc(142)] SuspendThread: Access is denied. (0x5)
+[0511/111503:ERROR:process_reader_win.cc(142)] SuspendThread: Access is denied. (0x5)
+[0511/111503:ERROR:process_reader_win.cc(142)] SuspendThread: Access is denied. (0x5)
+[0511/111503:ERROR:process_reader_win.cc(142)] SuspendThread: Access is denied. (0x5)
+[0511/111503:ERROR:process_reader_win.cc(142)] SuspendThread: Access is denied. (0x5)
+[0511/111503:ERROR:exception_snapshot_win.cc(87)] thread ID 6036 not found in process
+[0511/111503:WARNING:crash_report_exception_handler.cc(61)] ProcessSnapshotWin::Initialize failed
+[0511/111503:ERROR:scoped_process_suspend.cc(38)] NtResumeProcess: An attempt was made to access an exiting process.  (0xc000010a)
+[0511/113646:ERROR:scoped_process_suspend.cc(38)] NtResumeProcess: An attempt was made to access an exiting process.  (0xc000010a)
+[0511/113646:ERROR:process_reader_win.cc(233)] ReadMemory at 0xaf7000 of 36864 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[0511/113646:ERROR:crash_report_exception_handler.cc(112)] WriteEverything failed
+[0511/113646:ERROR:scoped_process_suspend.cc(38)] NtResumeProcess: An attempt was made to access an exiting process.  (0xc000010a)

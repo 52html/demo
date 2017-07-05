@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>御龙在天 黄金密宝箱</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="icon" href="images/favicon.ico">
+    <script href="js/common.js"></script>
+    <script src="js/jquery-1.12.4.js"></script>
+    <script>
+        //入口函数
+        $(function(){
+            //移入移出聚豆免费换的效果
+            $(".top>.freePic").mouseenter(function(){
+                $(".freePic>.free_content").stop().fadeIn(500);
+                        $(".shadow").stop().fadeIn(500);
+            })
+            $(".top>.freePic").mouseleave(function(){
+                $(".freePic>.free_content").stop().fadeOut(500);
+                $(".shadow").stop().fadeOut(500)
+                $(".shadow").mousemove(function(){
+                    $(this).stop().fadeOut(500);
+                })
+            })
+            //移入移出我的订单效果
+            $(".top .arrow1").mouseenter(function(){
+                $(".arrow1>.order").stop().fadeIn(1000);
+                $(".arrow1>span").stop().fadeIn(1000);
+            })
+            $(".top .arrow1").mouseleave(function(){
+                $(".arrow1>.order").stop().fadeOut(1000);
+                $(".arrow1>span").stop().fadeOut(1000);
+            })
+
+            //移入移出手机效果
+            $(".top .phone").mouseenter(function(){
+                $(".phone>.small_logo").stop().fadeIn();
+            })
+            $(".top .phone").mouseleave(function(){
+                $(".phone>.small_logo").stop().fadeOut();
+            })
+
+            //移入移出游戏导航效果
+            $(".top .arrow2").mouseenter(function(){
+                $(".arrow2>.nav").stop().show();
+            })
+            $(".top .arrow2").mouseleave(function(){
+                $(".arrow2>.nav").stop().hide();
+            })
+
+            //选择奖池奖品移入移出事件
+            $(".choose").mouseenter(function(){
+                $(this).animate({
+                    "opacity":0.8
+                },1000)
+            })
+            $(".choose").mouseleave(function(){
+                $(this).animate({
+                    "opacity":1
+                },1000)
+            })
+
+
+            //移入移出二维码效果
+            $("#erweima").mouseenter(function(){
+                $(this).stop().animate({
+                    "right" : 0
+                },500)
+            })
+            $("#erweima").mouseleave(function(){
+                $(this).stop().animate({
+                    "right" : "-140px"
+                },500)
+            })
+
+                    //抽奖部分
+            $(".award").click(function () {
+                $(".open li").each(function (index,ele) {
+                   setInterval(function () {
+                       $(ele).css("opacity",0.3);
+                   },1000);
+
+                })
+            });
+
+
+        });
+//        window.onload=function () {
+//            var lis=document.getElementsByClassName("open")[0].getElementsByTagName("li");
+//            var liw=document.getElementsByClassName("open")[0].getElementsByClassName("award")[0];
+//            console.log(liw);
+//
+//            liw.onclick=function () {
+//                for (var i = 0; i < lis.length; i++) {
+//
+//                    var timer=null;
+//                    timer=setInterval(function () {
+//                        lis[i].style.opacity="0.3";
+//                        console.log("2");
+//
+//                    },1000);
+//                    }
+//                };
+
+
+
+//        };
+    </script>
+</head>
+<body>
+<!--top开始-->
+<div class="top w">
+    <a href="javascript:;" class="top_l fl " title="道具城"></a>
+    <div class="freePic">
+        <a href="javascript:;" class="free_content"></a>
+        <div class="shadow"></div>
+    </div>
+    <ul class="top_r fr">
+        <li>您好未登陆，请<a href="javascript:;" title="登录">登陆</a></li>
+        <div class="line"></div>
+        <li><a href="javascript:;" title="精彩活动">精彩活动</a></li>
+        <div class="line"></div>
+        <li><a href="javascript:;" title="折扣工具">折扣道具</a></li>
+        <div class="line"></div>
+        <li class="arrow1">
+            <a href="javascript:;" title="我的订单">我的订单</a><i></i>
+            <div class="order">
+                <a href="javascript:;" title="个人中心">个人中心</a>
+                <a href="javascript:;" title="我的购物点">我的购物点</a>
+                <a href="javascript:;" title="我的优惠券">我的优惠券</a>
+                <a href="javascript:;" title="我的关注">我的关注</a>
+                <a href="javascript:;" title="我的魅力值">我的魅力值</a>
+                <a href="javascript:;" title="我的消息">我的消息</a>
+            </div>
+            <span></span>
+        </li>
+        <div class="line"></div>
+        <li class="phone">
+            <i></i><a href="javascript:;">手机版</a>
+            <div class="small_logo"></div>
+        </li>
+        <div class="line"></div>
+        <li class="arrow2">
+            <a href="javascript:;" class="game" title="游戏导航">游戏导航</a><i></i>
+            <div class="nav">
+                <div class="nav_t">
+                    <div class="sanjiao"></div>
+                </div>
+                <h3 class="juese fl">角色扮演 <span>(20)</span></h3>
+                <h3 class="jinji fl">竞技游戏 <span>(9)</span></h3>
+                <h3 class="xiux fl">休闲游戏 <span>(4)</span></h3>
+                <h3 class="wangy fl">网页游戏 <span>(7)</span></h3>
+                <ul class="first fl">
+                    <li><a href="javascript:;">御龙在天经典版</a></li>
+                    <li><a href="javascript:;">怪物猎人OL</a></li>
+                    <li><a href="javascript:;">天涯明月刀</a><img src="images/new.png" class="new fr" alt=""></li>
+                    <li><a href="javascript:;">上古世纪</a><img src="images/new.png" class="new fr" alt=""></li>
+                    <li><a href="javascript:;">QQ仙灵</a><img src="images/new.png" class="new fr" alt=""></li>
+                    <li><a href="javascript:;">疾风之刃</a></li>
+                    <li><a href="javascript:;">QQ幻想</a></li>
+                </ul>
+                <ul class="fl">
+                    <li><a href="javascript:;">刀剑2</a></li>
+                    <li><a href="javascript:;">寻仙</a></li>
+                    <li><a href="javascript:;">斗战神</a></li>
+                    <li><a href="javascript:;">轩辕传奇</a></li>
+                    <li><a href="javascript:;">剑灵</a></li>
+                    <li><a href="javascript:;">天堂2</a></li>
+                    <li><a href="javascript:;">天堂</a></li>
+                </ul>
+                <ul class="fl">
+                    <li><a href="javascript:;">幻想世界</a></li>
+                    <li><a href="javascript:;">QQ仙侠传</a></li>
+                    <li><a href="javascript:;">地下城与勇士</a><img src="images/hot.png" class="hot fr" alt=""></li>
+                    <li><a href="javascript:;">QQ三国</a></li>
+                    <li><a href="javascript:;">御龙在天</a><img src="images/hot.png" class="hot fr" alt=""></li>
+                    <li><a href="javascript:;">自由幻想</a></li>
+                    <li><a href="javascript:;"></a></li>
+                </ul>
+                <ul class="fl">
+                    <li><a href="javascript:;">使命召唤</a></li>
+                    <li><a href="javascript:;">英雄联盟</a><img src="images/hot.png" class="hot fr" alt=""></li>
+                    <li><a href="javascript:;">穿越火线</a><img src="images/hot.png" class="hot fr" alt=""></li>
+                    <li><a href="javascript:;">逆战</a><img src="images/hot.png" class="hot fr" alt=""></li>
+                    <li><a href="javascript:;">NBA2KOL</a></li>
+                    <li><a href="javascript:;">枪神纪</a><img src="images/new.png" class="new fr" alt=""></li>
+                    <li><a href="javascript:;">战地之王</a></li>
+                </ul>
+                <ul class="fl">
+                    <li><a href="javascript:;">神之浩劫</a><img src="images/new.png" class="new fr" alt=""></li>
+                    <li><a href="javascript:;">战争雷霆</a></li>
+                </ul>
+                <ul class="fl">
+                    <li><a href="javascript:;">炫舞时代</a></li>
+                    <li><a href="javascript:;">QQ炫舞</a><img src="images/hot.png" class="hot fr" alt=""></li>
+                    <li class="bl"><a href="javascript:;">QQ音速</a></li>
+                    <li class="bl"><a href="javascript:;">QQ飞车</a><img src="images/hot.png" class="hot fr" alt=""></li>
+                </ul>
+                <ul class="last fl">
+                    <li><a href="javascript:;">英魂之刃</a><img src="images/new.png" class="new fr" alt=""></li>
+                    <li><a href="javascript:;">火影忍者OL</a></li>
+                    <li><a href="javascript:;">夜店之王</a><img src="images/hot.png" class="hot fr" alt=""></li>
+                    <li><a href="javascript:;">部落守卫战</a><img src="images/new.png" class="new fr" alt=""></li>
+                    <li class="bl"><a href="javascript:;">Q宠大乐斗</a></li>
+                    <li class="bl"><a href="javascript:;">烽火战国</a></li>
+                    <li class="bl"><a href="javascript:;">七雄争霸</a></li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+</div>
+<!--top结束-->
+<!--login开始-->
+<div class="logo">
+    <div class="logo_c w">
+        <div class="logo_l fl">
+            <a href="../主页面_wjy/index_LZXS.html" target="_blank" class="left fl" title="御龙在天"></a>
+            <a href="javascript:;" class="right fr" title="道具城"></a>
+        </div>
+        <div class="logo_r fr">
+            <a href="../官网页面_zdwxm/index_zdwxm.html" target="_blank" class="fl" title="进入官网">进入官网</a>
+            <a href="javascript:;" class="fr" title="更多活动">更多活动</a>
+        </div>
+        <div class="time">
+            <p>活 动 时 间 : 2017 / 04 / 25 ~ 2017 / 05 / 16</p>
+        </div>
+        <div class="login">
+            您好，请 <a href="javascript:;">[登录]</a>
+        </div>
+        <div class="logo_b">
+            <div class="logo_b_l fl">
+                <h3>5Q币购买</h3>
+                <p title="GO">
+                    玫瑰花(15天)*5 <br />
+                    赠送1把黄金密保箱钥匙
+                </p>
+                <div class="enter">
+                   <h5 title="GO">GO</h5>
+                </div>
+            </div>
+            <div class="logo_b_m fl">
+                <h3>50Q币购买</h3>
+                <p title="GO">
+                    玫瑰花(15天)*50 <br />
+                    赠送11把黄金密保箱钥匙
+                </p>
+                <div class="enter">
+                    <h5 title="GO">GO</h5>
+                </div>
+            </div>
+            <div class="logo_b_r fr">
+                <h3>
+                    游戏内<br />
+                    活跃积分400
+                </h3>
+                <p title="GO">
+                    免费获得1把黄金密保箱钥匙 <br />
+                    （单角色限两把）
+                </p>
+                <div class="enter">
+                    <h5 title="GO">GO</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--login结束-->
+<!--banner开始-->
+<div class="banner">
+    <div class="banner_content w">
+        <p class="notice fr">注:所购买的玫瑰花可在5月10日开启的花榜活动中使用。请根据每轮消耗钥匙合理搭配购买</p>
+        <p class="key">
+            点击“选择奖池奖品”自己搭配奖池奖品，点击抽奖每次消耗指定数量的黄金密保箱钥匙，<br />
+            抽中的奖励将从奖池去除，抽取12次必定获得奖池的所有奖励
+        </p>
+        <a href="javascript:;" class="choose" title="选择奖池奖品"></a>
+        <div class="more">抽奖过程中还有机会随机获得黄金秘密箱钥匙返还</div>
+        <ul class="open">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li class="lis"></li>
+            <li></li>
+            <li class="hide"></li>
+            <li class="hide"></li>
+            <li class="lis"></li>
+            <li></li>
+            <li class="hide"></li>
+            <li class="hide"></li>
+            <li class="lis"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li class="lis"></li>
+            <li class="award"></li>
+            <p>
+                已抽中的奖励将不再抽中，最高可抽12次 <br />
+                你当前拥有<i>x</i>把钥匙，本次开启需要<i>xx</i>把钥匙
+            </p>
+            <div class="get"></div>
+        </ul>
+    </div>
+
+</div>
+<!--banner结束-->
+<!--main开始-->
+<div class="main">
+    <div class="main_t">达成指定抽奖轮次，即可获得丰富的奖励</div>
+    <ul class="main_c">
+        <li class="lun03">
+            <div class="cp">完成第3轮</div>
+            <div class="corn"></div>
+            <img src="images/third.png" alt="">
+            <span>萧何酿*2</span>
+            <a href="javascript:;" title="立即领取">立即领取</a>
+        </li>
+        <li class="lun05">
+            <div class="cp">完成第5轮</div>
+            <div class="corn"></div>
+            <img src="images/fifth.png" alt="">
+            <span>黄金账号特权卡30天</span>
+            <a href="javascript:;" title="立即领取">立即领取</a>
+        </li>
+        <li class="lun07">
+            <div class="cp">完成第7轮</div>
+            <div class="corn"></div>
+            <img src="images/seventh.png" alt="">
+            <span>紫车经验牌*2</span>
+            <a href="javascript:;" title="立即领取">立即领取</a>
+        </li>
+        <li class="lun09">
+            <div class="cp">完成第9轮</div>
+            <div class="corn"></div>
+            <img src="images/nineth.png" alt="">
+            <span>吕布变身卡7天</span>
+            <a href="javascript:;" title="立即领取">立即领取</a>
+        </li>
+        <li class="lun11">
+            <div class="cp">完成第11轮</div>
+            <div class="corn"></div>
+            <img src="images/eleventh.png" alt="">
+            <span>橙色换镖令*2</span>
+            <a href="javascript:;" title="立即领取">立即领取</a>
+        </li>
+        <li class="lun12">
+            <div class="cp">完成第12轮</div>
+            <div class="corn"></div>
+            <img src="images/twelveth.png" alt="">
+            <span>抱抱</span>
+            <a href="javascript:;" title="立即领取">立即领取</a>
+        </li>
+    </ul>
+</div>
+<!--main结束-->
+<!--footer开始-->
+<div class="footer">
+    <div class="footer_t">
+        <div class="footer_t_c w">
+            <ol>
+                <li><span></span><i class="one">1</i>活动时间：2017年4月25日-5月16日。</li>
+                <li><span></span><i class="two">2</i>玩家购买玫瑰花可获得“黄金秘宝箱钥匙”参与黄金秘宝箱活动。</li>
+                <li><span></span><i class="three">3</i>抽满十二轮必得奖池内全部奖品。</li>
+                <li><span></span><i class="four">4</i>在备选奖池中自助选择心仪奖品。</li>
+                <li><span></span><i class="five">5</i>抽取过程中还有机会获得黄金秘宝箱钥匙奖励。</li>
+                <li><span></span><i class="six">6</i>抽满指定轮数还有额外奖励赠送！</li>
+                <li><span></span><i class="seven">7</i>请玩家理性消费，适度游戏。</li>
+            </ol>
+        </div>
+
+    </div>
+    <div class="footer_b">
+        <p>
+            <a href="javascript:;">腾讯互动娱乐</a>|
+            <a href="javascript:;">服务条款</a>|
+            <a href="javascript:;">广告服务</a>|
+            <a href="javascript:;">腾讯游戏招聘</a>|
+            <a href="javascript:;">腾讯游戏客服</a>|
+            <a href="javascript:;">游戏地图</a>|
+            <a href="javascript:;">游戏活动</a>|
+            <a href="javascript:;">成长守护平台</a>|
+            <a href="javascript:;">商务合作</a>|
+            <a href="javascript:;">网站导航</a> <br />
+            COPYRIGHT © 1998 – 2017 TENCENT. ALL RIGHTS RESERVED. <br />
+            <a href="javascript:;">腾讯公司 版权所有</a>
+        </p>
+    </div>
+</div>
+<!--设置二维码的定位-->
+<i id="erweima"></i>
+<!--footer结束-->
+</body>
+</html>

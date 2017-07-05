@@ -1,0 +1,91 @@
+
+
+/*banner开始*/
+.box1 {  background: url(../images/bg1.jpg) no-repeat center top;  }
+.box1 .container { padding-top: 373px;  height: 361px;  }
+.container {  position: relative;  margin: 0 auto;  width: 1000px;  }
+.logo_btn {  position: absolute;  left: -46px;  top: 0;  width: 420px;  height: 105px;  }
+.logo_btn a {  float: left;  _display: inline;  width: 120px;  height: 105px;  }
+.logo_btn a.gj_logo {  width: 170px;  }
+.top_btn {  position: absolute;  top: 20px;  right: 20px;  }
+.topBox {  float: left;  _display: inline;  width: 222px;  height: 42px;  position: relative;  }
+.top_btn .top_index {  background-position: -182px -188px;  float: left;  display: block;  width: 101px;  height: 42px;  }
+.spr {  background: url(../images/icon_spr.png) no-repeat;  }
+.topBox .topInner {  position: absolute;  top: 41px;  left: 0; display: none;  }
+.topBox .topInner a {  display: block;  width: 99px;  height: 35px;  line-height: 35px;  border: 1px solid #e9aec2;  text-align: center;  color: #ffe86d;  font-size: 12px;  }
+.btn_bg {  background: url(../images/btn_bg.png) repeat;  }
+.top_btn .top_guanjia {  background-position: -843px -80px;  margin-left: 20px;  float: left;  _display: inline;  width: 101px;  height: 42px;  }
+.top_btn a:hover, .download_btn a:hover, .novicePage .giftBox a:hover, .growPage .get_btn:hover {  filter: alpha(opacity=90);  -moz-opacity: 0.9;  -khtml-opacity: 0.9;  opacity: 0.9;  }
+.loginBox {  color: #4d272d;  font-size: 16px;  line-height: 20px;  text-shadow: 1px 1px 3px #f1b8db;  position: relative;  width: 524px;  height: 260px;  }
+.loginBox a{ color: #4d272d;}
+.bindBox {  width: 100%;  height: 30px;  position: relative;  margin-top: 5px;  }
+.btn_bg {  background: url(../images/btn_bg.png) repeat;  }
+.loginBox .yl_bind, .loginBox .yljd_bind {  color: #ffe86d;  text-shadow: none;  position: absolute;  top: 0;  left: 10px;  line-height: 30px;  }
+.loginBox .yl_bind a, .loginBox .yljd_bind a {  color: #ffe86d;  text-shadow: none;  }
+.loginBox .yljd_bind {  left: auto;  right: 10px;  }
+.download_btn {  width: 100%;  height: 79px;  text-align: center;  font-size: 0;  }
+.dBox {  display: inline-block;  vertical-align: top;  position: relative; /*width: 329px;*/  height: 79px;  margin: 0 28px;  }
+.download_btn a.download_game {  background-position: -10px -10px;  }
+.download_btn a {  display: inline-block;  vertical-align: top;  width: 329px;  height: 79px;  float: left;;  }
+.dBox .dInner {  width: 328px;  position: absolute;  top: -93px;  left: 0; display: none;  }
+.dBox .dInner a {  display: block;  width: 326px;  height: 45px;  line-height: 45px;  border: 1px solid #e9aec2;  text-align: center;  color: #ffe86d;  font-size: 20px;  }
+.download_btn a.download_guanjia {  background-position: -10px -99px;  margin: 0 28px;  }
+/*banner结束*/
+
+
+
+
+.box2 {  background: url(../images/bg2.jpg) no-repeat center top; }
+.box2 .container {  padding-top: 34px; padding-bottom: 90px;  }
+.container {  position: relative;  margin: 0 auto;  width: 1000px;  }
+
+.tabBtn a.yl_tab.on, .tabBtn a.yl_tab:hover {  background-position: -596px -162px;  }
+.tabBtn a.yljd_tab.on, .tabBtn a.yljd_tab:hover {  background-position: -349px -10px;  }
+.tabBtn {  width: 100%;  font-size: 0;  text-align: center;  position: relative;  z-index: 3;  }
+.tabBtn a {  display: inline-block;  vertical-align: top;  height: 60px;  margin: 0 28px;  }
+.tabBtn a.yl_tab {  width: 179px;  background-position: -785px -162px;  }
+.tabBtn a.yljd_tab {  width: 259px;  background-position: -618px -10px;  }
+.sectionBox {  width: 998px;  border: 1px solid #f5d1dc;  background: url(../images/cont_bg.png) repeat;  margin: 0 auto;  padding-bottom: 40px;  position: relative;  z-index: 1;  }
+.sectionBox .sectionPart {  width: 968px;  position: relative;  margin: 0 auto;  }
+.headerBox {  width: 100%;  position: relative;  }
+.novicePage .headerBox h3 {  width: 588px;  height: 193px;  background: url(../images/tit01.png) no-repeat;  text-indent: -9999px;  position: absolute;  top: -20px;  left: 50%;  margin-left: -294px;  }
+.ruleBox {  padding-top: 160px;  }
+.ruleBox p {  font-size: 16px;  line-height: 22px;  color: #f75e80;  }
+.novicePage .giftBox {  margin-top: 10px;  height: 462px;  }
+.novicePage .giftBox .giftLeft, .novicePage .giftBox .giftRight {  float: left;  _display: inline;  width: 477px;  height: 434px;  background: url(../images/page_bg1.png) no-repeat;  padding-top: 28px;  }
+.listBox {  font-size: 0;  width: 100%;  text-align: center;  }
+.listBox li {  display: inline-block;  vertical-align: top;  width: 137px;  height: 119px;  background: url(../images/li_bg.png) no-repeat;  padding-top: 27px;  margin: 0 7px 20px;  }
+.listBox li img {  display: block;  width: 65px;  height: 65px;  margin: 0 auto;  vertical-align: top;  }
+.listBox li span.c_ts {  line-height: 18px;  }
+
+.listBox li span {  display: block;  text-align: center;  font-size: 16px;  color: #ffebef;  line-height: 36px;  margin-top: 5px;  }
+.novicePage .giftBox a {  display: block;  width: 237px;  height: 72px;  margin: 0 auto;  }
+.novicePage .register_btn {  background-position: -596px -80px;  }
+.novicePage .register_btn2 {  background-position: -349px -162px;  }
+
+.novicePage .giftBox .giftRight {  margin-left: 14px;}
+.growPage .headerBox h3 {  width: 588px;  height: 193px;  background: url(../images/tit02.png) no-repeat; text-indent: -9999px;  position: absolute;  top: 0;  left: 50%;  margin-left: -294px;}
+
+.growPage .headerBox .ruleBox {  padding-top: 175px;}
+.ruleBox p {  font-size: 16px;  line-height: 22px;  color: #f75e80;}
+.growPage .giftBox {  width: 968px;  height: 290px;  background: url(../images/page_bg2.png) no-repeat;  margin: 10px auto 0;  padding-top: 32px;}
+.growPage .get_btn {  display: block;  width: 237px;  height: 72px;  margin: 0 auto;  background-position: -349px -80px;}
+.luckPage .headerBox h3 {  width: 596px;  height: 193px;  background: url(../images/tit03.png) no-repeat;  text-indent: -9999px;  position: absolute;  top: 0;  left: 50%;  margin-left: -298px;}
+.luckPage .headerBox .ruleBox {  padding-top: 180px;}
+.ruleBox p {  font-size: 16px;  line-height: 22px;  color: #f75e80;  }
+.luckPage .giftBox {  width: 968px;  height: 692px;  background: url(../images/page_bg3.png) no-repeat;  margin: 25px auto 0;  padding-top: 28px;  position: relative;}
+.invite_btn {  display: block;  width: 115px;  height: 41px;  background: url(../images/invite_btn.png) no-repeat;  position: absolute;  left: 28px;  top: 28px;  z-index: 3;}
+.luckPage .giftBox .boatNum {  font-size: 16px;  line-height: 20px;  color: #ff7c99;  position: absolute;  top: 32px;  right: 32px;}
+.lotteryBox {  display: block;  width: 727px;  height: 466px;  background: url(../images/lottery_bg.png) no-repeat;  margin: 0 auto;  position: relative;}
+.lottery_ul {  width: 860px;  font-size: 0;  text-align: left;  margin: 60px auto 0;  height: 120px;  overflow: hidden;}
+.lotteryBox .yl_lottery_img {  display: block;  position: absolute;  left: 50%;  margin-left: -361px;  top: 44px;  z-index: 999;}
+.lotteryBox .choujiang{ width: 237px; height: 72px; background: url("../images/choujiang.jpg") no-repeat; display: block; position: absolute; left: 260px; bottom: 0; cursor: pointer;}
+.lotteryBox .choujiang:hover{  opacity: 0.9;}
+.lottery_ul li {  display: inline-block;  vertical-align: top;  width: 100%;  font-size: 14px;  line-height: 24px;  color: #ff7c99;  margin: 3px 0;  }
+.lottery_ul li .li_cont{ width: 33.3%; float: left;}
+.rulePage h3 {  width: 162px;  height: 44px;  text-indent: -9999px;  background-position: -10px -188px;  margin-bottom: 30px;  }
+.rulePage p {  width: 933px;  padding-left: 35px;  position: relative;  font-size: 16px;  line-height: 24px;  color: #f75e80;  margin-bottom: 5px;  }
+.rulePage p span {  display: block;  width: 27px;  height: 24px;  position: absolute;  left: 0;  top: 0;  background-position: -293px -188px;  color: #fff;  font-size: 16px;  line-height: 24px;  text-align: center;  }
+
+
+

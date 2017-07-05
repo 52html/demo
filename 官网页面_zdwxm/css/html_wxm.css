@@ -1,0 +1,357 @@
+/*最新活动*/
+.new .media_press {
+    width: 960px;
+    height: 412px;
+    background-color: #fff;
+    padding-top: 32px;
+    padding-bottom: 15px;
+}
+
+.new .media_press .new_box1 .media {
+    width: 209px;
+    height: 23px;
+    display: block;
+    background: url(../images/sprites.jpg) no-repeat -86px -311px;
+    text-indent: -9999px;
+}
+
+.new .media_press .new_box2 .media {
+    width: 209px;
+    height: 23px;
+    display: block;
+    background: url(../images/sprites.jpg) no-repeat -86px -334px;
+    text-indent: -9999px;
+}
+
+.new .news_nav {
+    position: relative;
+    background-color: #F5F5F5;
+}
+
+.hot {
+    display: inline-block;
+    width: 8px;
+    height: 9px;
+    background: url(../images/sprites.jpg) no-repeat -226px -289px;
+    text-indent: -9999px;
+    position: absolute;
+    top: 14px;
+    right: 14px;
+}
+.hot1 {
+    display: inline-block;
+    width: 8px;
+    height: 9px;
+    background: url(../images/sprites.jpg) no-repeat -226px -289px;
+    text-indent: -9999px;
+    position: absolute;
+    top: 14px;
+    right: 8px;
+}
+
+.new .news_nav a {
+    float: left;
+    display: block;
+    text-align: center;
+    width: 85px;
+    line-height: 36px;
+    color: #000;
+    font-size: 13px;
+    border-bottom: 2px solid #ebebea;
+    transition: border 0.3s linear;
+}
+
+.new .new_box1 .news_img {
+    padding-top: 5px;
+    border-bottom: 1px solid #d1c8c1;
+}
+
+.new .new_box2 .news_img {
+    margin-top: 20px;
+}
+
+.new .new_box2 .news_btm .news_list {
+    margin-top: 5px;
+}
+
+.wordstyle {
+    margin-top: 20px;
+    font-weight: bold;
+    width: 60%;
+    color: #92742b;
+    font-size: 17px;
+    line-height: 40px;
+    display: block;
+    overflow: hidden;
+    height: 40px;
+}
+
+.swordstyle {
+    font-size: 12px;
+    line-height: 18px;
+    color: #707070;
+}
+
+/*媒体专区*/
+.media_press {
+    width: 960px;
+    height: 412px;
+    background-color: #F5F5F5;
+    padding-top: 32px;
+    margin-bottom: 15px;
+}
+
+/*媒体专区左侧盒子*/
+.media_press .new_box1 {
+    margin-left: 26px;
+    padding-right: 26px;
+    border-right: 1px solid #f1f1f1;
+    width: 428px;
+    padding-bottom: 2px;
+    float: left;
+}
+
+.media_press .new_box1 .media {
+    width: 209px;
+    height: 23px;
+    display: block;
+    background: url(../images/sprites.jpg) no-repeat -86px -357px;
+    text-indent: -9999px;
+}
+
+.more {
+    font-family: Verdana;
+    font-size: 12px;
+    float: right;
+    color: #888888;
+    line-height: 20px;
+    margin-top: -20px;
+}
+
+.add {
+    width: 11px;
+    height: 11px;
+    overflow: hidden;
+    display: inline-block;
+    font-size: 0;
+    line-height: 0;
+    text-indent: -9999px;
+    background: url(../images/sprites.jpg) no-repeat -253px -289px;
+    position: relative;
+    top: 2px;
+    margin-left: 5px;
+}
+
+.news_nav {
+    position: relative;
+    margin-top: 20px;
+    background: #fff;
+    width: 100%;
+    height: 36px;
+    border-bottom: 2px solid #ebebea;
+}
+
+/*鼠标移入后的样式*/
+.new .news_nav .news_active, .media .news_nav .news_active {
+    background: #f0f0f0;
+    border-bottom-color: #ad8732;
+    color: #ad8732;
+    font-weight: bold;
+}
+
+.news_nav a {
+    float: left;
+    display: block;
+    text-align: center;
+    width: 96px;
+    line-height: 36px;
+    color: #000;
+    font-size: 13px;
+    border-bottom: 2px solid #ebebea;
+    transition: border 0.3s linear;
+}
+
+.media .new_box1 .news_img {
+    padding: 19px 0 7px 0;
+}
+
+.media .new_box1 .news_img a {
+    width: 207px;
+    height: 117px;
+    display: block;
+}
+
+.new_box1 .news_btm .news_list {
+    height: 160px;
+    width: 100%;
+}
+
+.new_box1 .news_btm .news_list li, .new .new_box2 .news_btm .news_list li {
+    border-bottom: 1px dotted #d1c8c1;
+    height: 35px;
+    line-height: 35px;
+}
+
+.new_box1 .news_btm .news_list li a, .new .new_box2 .news_btm .news_list li a {
+    height: 35px;
+    line-height: 35px;
+    margin-left: 10px;
+    color: #000;
+}
+
+.news_list .sanjiao {
+    background: url(../images/sprites.jpg) no-repeat -264px -289px;
+    display: block;
+    width: 4px;
+    height: 7px;
+    margin-right: 5px;
+    position: relative;
+    top: 22px;
+}
+
+/*媒体专区右侧盒子*/
+.media_press .new_box2 {
+    width: 428px;
+    margin-left: 26px;
+    padding-bottom: 2px;
+}
+
+.media_press .new_box2 .con {
+    width: 213px;
+    background: url(../images/sprites.jpg) no-repeat -86px -380px;
+    display: block;
+    text-indent: -9999px;
+    height: 23px;
+}
+
+.new_box2 .imgs {
+    margin-top: 20px;
+}
+
+.new_box2 .imgs li {
+    float: left;
+    width: 50%;
+    border-bottom: 1px dotted #c7c2bc;
+    height: 72px;
+    font-size: 14px;
+}
+
+.new_box2 .imgs2 {
+    margin-top: 20px;
+}
+
+.new_box2 .imgs2 li {
+    float: left;
+    border-bottom: 1px dotted #c7c2bc;
+    height: 72px;
+}
+
+.new_box2 .imgs2 li img {
+    margin-top: 14px;
+    line-height: 42px;
+    width: 140px;
+    height: 42px;
+    display: block;
+}
+
+.new_box2 .imgs li span {
+    height: 44px;
+    margin-right: 10px;
+    position: relative;
+    top: -14px;
+}
+
+.new_box2 .imgs li a {
+    display: block;
+    width: 155px;
+    margin-left: 20px;
+    line-height: 72px;
+    color: #8e9293;
+}
+
+/*游戏健康公告*/
+.health_notic {
+    margin-top: 20px;
+    height: 60px;
+    background-color: #FAFAFA;
+    border-top: 1px solid #e8e8e8;
+    padding: 26px 0 17px 0;
+}
+
+.health_notic h3 {
+    width: 181px;
+    height: 23px;
+    float: left;
+    display: block;
+    text-indent: -5000px;
+    background: url(../images/sprites_main.jpg) no-repeat 0 -119px;
+}
+
+.health_notic ul {
+    float: left;
+    width: 81%;
+    position: relative;
+    top: -3px;
+}
+
+.health_notic li {
+    float: left;
+    width: 25%;
+    text-align: center;
+    color: #aeaeae;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+/*最底部*/
+.footer {
+    height: 158px;
+    border-top: 1px solid #e8e8e8;
+    background-color: #FAFAFA;
+}
+
+.footer-b {
+    height: 158px;
+    position: relative;
+}
+
+.logo {
+    width: 289px;
+    height: 46px;
+    background: url(../images/footer_logo.jpg) no-repeat;
+    margin-top: 20px;
+}
+
+.footer-b a {
+    margin-right: 10px;
+    margin-top: 20px;
+}
+
+.logo-r {
+    width: 1000px;
+    height: 100px;
+    position: absolute;
+    right: 0;
+    bottom: 20px;
+}
+
+.logo-r p {
+    margin: 5px 0;
+}
+
+.logo-r p span {
+    margin: 0 9px;
+}
+
+.logo-r .e {
+    margin-left: 100px;
+}
+
+.logo-r ul {
+    padding-top: 8px;
+    clear: both;
+}
+
+.logo-r ul span {
+    margin: 0 10px;
+}

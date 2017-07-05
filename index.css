@@ -1,0 +1,55 @@
+       * {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  a, img {
+    border: 0;
+  }
+
+  body {
+    font: 12px/180% Arial, Helvetica, sans-serif, "新宋体";
+  }
+   #index_LZXS {
+      display: block;
+      position: absolute;
+      height: 68px;
+      width: 108px;
+      background: url("主页面_wjy/images/logo.png") no-repeat;
+      top: 50%;
+      left: 50%;
+      margin-left: -420px;
+      margin-top: -120px;
+      z-index: 9999;
+    }
+
+    #title05 a{
+      display: block;
+      width: 800px;
+      height: 200px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -330px;
+      margin-top: -180px;
+      background:url("主页面_wjy/images/1494428061_561091.png"),no-repeat 0 0;
+    }
+
+    h1 {
+      text-shadow: 5px 5px 5px #fcff3e;
+      font-size: 72px;
+      color: #b7b737;
+      font-family: "microsoft yahei";
+    }
+    #name{
+      width: 800px;
+      height: 120px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -400px;
+      margin-top: 50px;
+      background:url("主页面_wjy/images/1494433760_832384.png")
+    }
+

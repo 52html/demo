@@ -1,0 +1,4 @@
+[0511/151055:ERROR:process_reader_win.cc(142)] SuspendThread: Access is denied. (0x5)
+[0511/151055:ERROR:process_reader_win.cc(142)] SuspendThread: Access is denied. (0x5)
+[0511/151055:ERROR:scoped_process_suspend.cc(38)] NtResumeProcess: An attempt was made to access an exiting process.  (0xc000010a)
+[0511/151055:ERROR:scoped_process_suspend.cc(38)] NtResumeProcess: An attempt was made to access an exiting process.  (0xc000010a)

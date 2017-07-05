@@ -1,0 +1,745 @@
+/*top部分*/
+.top_box{
+    width: 100%;
+    height: 42px;
+    background-color: #fff;
+    /*background: url("../images/ost-bg.png") 0 0;*/
+}
+.top {
+    width: 970px;
+    height: 40px;
+    padding-top:2px;
+    margin:0 auto;
+    font-size: 14px;
+    /*border: 1px solid #C9C9C9;*/
+    background-color: #fff;
+}
+
+.top .t_l .l_tgame{
+    width: 205px;
+    height: 40px;
+    float: left;
+    background: url("../images/ost-bg.png") no-repeat 0 -40px;
+    position: relative;
+    z-index: 3;
+}
+
+.top .t_l .l_line {
+    width: 0;
+    height: 35px;
+    float: left;
+    border-left: 1px solid #D2D7E3;
+    margin:0 15px;
+    position: relative;
+    z-index: 3;
+}
+.top .t_l .l_gift{
+    width: 230px;
+    height: 40px;
+    float: left;
+    display: block;
+    /*background: url("../images/3210649731641642364149336764323040.1493367646.jpg") no-repeat;*/
+    position: relative;
+    z-index: 3;
+}
+.top .t_l .l_gift img{
+    position: relative;
+    z-index:1;
+    /*display: none;*/
+}
+.top .t_l .l_gift_down{
+    width: 970px;
+    height: 185px;
+    background: url("../images/172308124510079406371493367542970185.1493367569.jpg") no-repeat;
+    position: absolute;
+    top: 4px;
+    z-index: 2;
+    display:none;
+}
+
+.top .t_r{
+    position: relative;
+    z-index:3;
+}
+.top .t_r .r_stage{
+    width: 120px;
+    height: 40px;
+    float: left;
+    line-height:40px;
+    padding-left: 20px;
+    /*padding-top:10px;*/
+    color: #000;
+    font-family:"simsun";
+    /*background:url("../images/logo.png") no-repeat 0 0;*/
+}
+.top .t_r .r_rank{
+    width: 115px;
+    height: 40px;
+    line-height:40px;
+    /*position: absolute;*/
+    /*right:0;*/
+    /*top:0;*/
+    float: left;
+    color: #000;
+    font-family:"simsun";
+
+}
+.top .t_r .r_rank a{
+    color: #000;
+}
+
+.top .t_r .r_rank .arrDown{
+    display: block;
+    float: right;
+    margin-top: 15px;
+    width: 15px;
+    height: 15px;
+    background: url("../images/ost-bg.png") no-repeat -149px -134px;
+}
+
+
+
+
+
+
+
+/*nav开始*/
+.nav{
+    width: 100%;
+    height: 80px;
+    background-color: #161616;
+}
+.nav .nav-l a{
+    margin: 6px 0 6px 38px;
+    display: block;
+    width: 205px;
+    height: 68px;
+    background: url(../images/logo.png) no-repeat center;
+}
+.nav .nav-m li{
+    float: left;
+    margin: 22px 17px;
+    text-align: center;
+}
+.nav .nav-m li a{
+    color: #9f9f8d;
+}
+.nav .nav-m li a:hover{
+    color: #bd9a5a;
+}
+.nav .nav-m .nav-mt{
+    font-size: 18px;
+    font-weight: 700;
+}
+.nav .nav-m .nav-mb{
+    font-size: 14px;
+}
+.nav .nav-r a{
+    color: #bd9a5a;
+    display: inline-block;
+    border: 1px solid #bd9a5a;
+    width: 98px;
+    height: 28px;
+    line-height: 28px;
+    font-size: 14px;
+    text-align: center;
+    margin: 25px 5px;
+}
+.nav .nav-r a:hover{
+    background-color: #bd9a5a;
+    color: #000;
+}
+/*nav结束*/
+/*main开始*/
+.main{
+    width: 100%;
+    position: relative;
+    background: url(../images/bg1.jpg) no-repeat center;
+}
+.main .main-c{
+    height: 890px;
+    background: url(../images/bga1.jpg) no-repeat center;
+}
+.main .logo-l a,.logo-r a{
+    display: block;
+    width: 128px;
+    height: 104px;
+}
+.main .logo-l a{
+    background: url(../images/spr.png) no-repeat -702px -700px;
+    position: absolute;
+    left: 160px;
+    top: 42px;
+}
+.main .logo-r a{
+    background: url(../images/spr.png) no-repeat -830px -700px;
+    position: absolute;
+    left: 298px;
+    top: 42px;
+}
+/*以下修改*/
+.main .act2{
+    position: absolute;
+    top: 62px;
+    right: 170px;
+    width: 92px;
+}
+.main .act1,.act2 .act2-a,.act2 .act2-t,.act2 .act2-b{
+    display: block;
+    width: 92px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    color: #fde3ff;
+    font-size: 16px;
+    background: url(../images/spr.png) no-repeat -906px 0px;
+    border-radius: 8px;
+    position: absolute;
+}
+.main .act1 a{
+    color: #fde3ff;
+}
+.main .act1{
+    top: 62px;
+    right: 274px;
+}
+.act2 .act2-a {
+    left: 0px;
+    top: 0px;
+    display: block;
+}
+.act2 .act2-t{
+    right: 0px;
+    top: 44px;
+    display: none;
+}
+.act2 .act2-b{
+    right: 0px;
+    top: 88px;
+    display: none;
+}
+/*main结束*/
+/*壹 开始*/
+.one{
+    width: 100%;
+    background: url(../images/bg2.jpg) no-repeat center;
+}
+.one .one-c {
+    height: 407px;
+    padding-top: 273px;
+    position: relative;
+    background: url(../images/bga2.jpg) no-repeat;
+}
+.one .one-c ul{
+    width: 1200px;
+    margin-left: -100px;
+    text-align: center;
+}
+.one-cl,.one-cm,.one-cr{
+    display: inline-block;
+}
+.one .one-c ul a{
+    display: inline-block;
+    width: 350px;
+    height: 280px;
+}
+.one-cl{
+    background: url(../images/spr.png) no-repeat -11px -702px;
+}
+/*弹框1*/
+.one-cl .dec-o .dec-o1{
+    width: 423px;
+    height: 113px;
+    background: url(../images/nspr.png) no-repeat -10px -895px;
+    position: absolute;
+    top: 125px;
+    left: 300px;
+}
+.one-cl .dec-o .dec-o2{
+    display: block;
+    height: 43px;
+    width: 43px;
+    background: url(../images/nspr.png) no-repeat -847px -690px;
+    position: absolute;
+    top: 80px;
+    right: 176px;
+}
+.one-cl .dec-o .txt{
+    padding-top: 127px;
+}
+.one-cl .dec-o .txt .txt-1{
+    font-size: 18px;
+    line-height: 30px;
+    color: #595959;
+    width: 600px;
+    text-align: center;
+    padding: 140px 0 29px 216px;
+}
+.one-cl .dec-o .txt .txt-2{
+    width: 310px;
+    height: 40px;
+    background: url(../images/nspr.png) no-repeat -500px -1010px;
+    margin: 0 auto;
+}
+.one-cl .dec-o .txt .txt-3{
+    padding-left: 60px;
+    position: relative;
+    color: #595959;
+    font-size: 18px;
+    line-height: 30px;
+    margin-top: 10px;
+}
+.one-cl .dec-o .txt .txt-3 span{
+    width: 100px;
+    position: absolute;
+    left: 310px;
+    top: 0;
+    color: #dc4a60;
+}
+.one-cl .dec-o .txt .txt-4{
+    padding-left: 60px;
+    position: relative;
+    color: #595959;
+    font-size: 18px;
+    line-height: 30px;
+    margin-top: 10px;
+}
+.one-cl .dec-o .txt .txt-4 span{
+    width: 100px;
+    position: absolute;
+    left: 310px;
+    top: 0;
+    color: #dc4a60;
+}
+/*弹框1结束*/
+.one-cm{
+    background: url(../images/spr.png) no-repeat -342px -702px;
+}
+/*弹框2*/
+.one-cm .dec-t .dec-t1{
+    width: 423px;
+    height: 103px;
+    background: url(../images/nspr.png) no-repeat -10px -792px;
+    position: absolute;
+    top: 125px;
+    left: 300px;
+}
+.one-cm .dec-t .dec-t2{
+    display: block;
+    height: 43px;
+    width: 43px;
+    background: url(../images/nspr.png) no-repeat -847px -690px;
+    position: absolute;
+    top: 80px;
+    right: 176px;
+}
+.one-cm .dec-t .txt{
+    padding-top: 127px;
+}
+.one-cm .dec-t .txt .txt-1{
+    font-size: 18px;
+    line-height: 30px;
+    color: #595959;
+    width: 600px;
+    text-align: center;
+    padding: 140px 0 29px 216px;
+}
+.one-cm .dec-t .txt .txt-2{
+    width: 310px;
+    height: 40px;
+    background: url(../images/nspr.png) no-repeat -500px -1010px;
+    margin: 0 auto;
+}
+.one-cm .dec-t .txt .txt-3{
+    text-align: center;
+    position: relative;
+    color: #595959;
+    font-size: 18px;
+    line-height: 30px;
+    margin-top: 10px;
+}
+/*弹框2结束*/
+.one-cr{
+    background: url(../images/spr.png) no-repeat -11px -980px;
+}
+/*弹框3*/
+.one-cr .dec-th .dec-th1{
+    width: 510px;
+    height: 111px;
+    background: url(../images/nspr.png) no-repeat -10px -1120px;
+    position: absolute;
+    top: 125px;
+    left: 300px;
+}
+.one-cr .dec-th .dec-th2{
+    display: block;
+    height: 43px;
+    width: 43px;
+    background: url(../images/nspr.png) no-repeat -847px -690px;
+    position: absolute;
+    top: 80px;
+    right: 176px;
+}
+.one-cr .dec-th .txt{
+    padding-top: 127px;
+}
+.one-cr .dec-th .txt .txt-1{
+    font-size: 18px;
+    line-height: 30px;
+    color: #595959;
+    width: 600px;
+    text-align: center;
+    padding: 140px 0 29px 216px;
+}
+.one-cr .dec-th .txt .txt-2{
+    width: 310px;
+    height: 40px;
+    background: url(../images/nspr.png) no-repeat -500px -1010px;
+    margin: 0 auto;
+}
+.one-cr .dec-th .txt .txt-3{
+    text-align: center;
+    position: relative;
+    color: #595959;
+    font-size: 18px;
+    line-height: 30px;
+    margin-top: 10px;
+}
+/*弹框3结束*/
+/*壹 结束*/
+/*贰 开始*/
+.two{
+    width: 100%;
+    background: url(../images/bg3.jpg) no-repeat center;
+}
+.two .two-c {
+    height: 500px;
+    padding-top: 240px;
+    position: relative;
+    background: url(../images/bga3.jpg) no-repeat;
+}
+.two .two-c ul{
+    width: 1200px;
+    margin-left: -100px;
+    text-align: center;
+}
+.two-cl,.two-cm,.two-cr{
+    display: inline-block;
+    margin: 0 22px;
+}
+.two .two-c ul a{
+    display: inline-block;
+    width: 300px;
+    height: 320px;
+}
+.two-cl{
+    background: url(../images/spr.png) no-repeat -600px -370px;
+}
+/*弹框4*/
+.two-cl .dec1 .dec1o{
+    width: 418px;
+    height: 110px;
+    background: url(../images/nspr.png) no-repeat -10px -678px;
+    position: absolute;
+    top: 125px;
+    left: 300px;
+}
+.two-cl .dec1 .dec2o{
+    display: block;
+    height: 43px;
+    width: 43px;
+    background: url(../images/nspr.png) no-repeat -847px -690px;
+    position: absolute;
+    top: 80px;
+    right: 176px;
+}
+.two-cl .dec1 .dec3o{
+    padding-left: 260px;
+    width: 430px;
+    height: 210px;
+    overflow: auto;
+    position: absolute;
+    top: 240px;
+}
+.two-cl .dec1 .dec3o .box{
+    width: 400px;
+    color: #595959;
+    font-size: 16px;
+    line-height: 24px;
+}
+.two-cl .dec1 .dec3o .box h3{
+    font-size: 16px;
+    color: #e45871;
+    padding-top: 10px;
+    text-align: left;
+}
+.two-cl .dec1 .dec3o .box p{
+    text-indent: 2em;
+    padding-top: 10px;
+    text-align: left;
+}
+.two-cl .dec1 .dec3o .box img{
+    margin: 10px auto 0;
+}
+/*弹框4结束*/
+.two-cm{
+    background: url(../images/spr.png) no-repeat -300px -370px;
+}
+/*弹框5*/
+.two-cm .dec2 .dec1t{
+    width: 418px;
+    height: 110px;
+    background: url(../images/nspr.png) no-repeat -430px -678px;
+    position: absolute;
+    top: 125px;
+    left: 300px;
+}
+.two-cm .dec2 .dec2t{
+    display: block;
+    height: 43px;
+    width: 43px;
+    background: url(../images/nspr.png) no-repeat -847px -690px;
+    position: absolute;
+    top: 80px;
+    right: 176px;
+}
+.two-cm .dec2 .dec3t{
+    padding-left: 260px;
+    width: 430px;
+    height: 210px;
+    overflow: auto;
+    position: absolute;
+    top: 240px;
+}
+.two-cm .dec2 .dec3t .box{
+    width: 400px;
+    color: #595959;
+    font-size: 16px;
+    line-height: 24px;
+}
+.two-cm .dec2 .dec3t .box p{
+    text-indent: 2em;
+    padding-top: 10px;
+    text-align: left;
+}
+.two-cm .dec2 .dec3t .box img{
+    margin: 10px auto 0;
+}
+/*弹框5结束*/
+.two-cr{
+    background: url(../images/spr.png) no-repeat 0px -370px;
+}
+/*弹框6*/
+.two-cr .dec3 .dec1th{
+    width: 432px;
+    height: 110px;
+    background: url(../images/nspr.png) no-repeat -430px -790px;
+    position: absolute;
+    top: 125px;
+    left: 300px;
+}
+.two-cr .dec3 .dec2th{
+    display: block;
+    height: 43px;
+    width: 43px;
+    background: url(../images/nspr.png) no-repeat -847px -690px;
+    position: absolute;
+    top: 80px;
+    right: 176px;
+}
+.two-cr .dec3 .dec3th{
+    padding-left: 260px;
+    width: 430px;
+    height: 210px;
+    overflow: auto;
+    position: absolute;
+    top: 240px;
+}
+.two-cr .dec3 .dec3th .box{
+    width: 400px;
+    color: #595959;
+    font-size: 16px;
+    line-height: 24px;
+}
+.two-cr .dec3 .dec3th .box p{
+    text-indent: 2em;
+    padding-top: 10px;
+    text-align: left;
+}
+/*弹框6结束*/
+/*贰 结束*/
+/*叁 开始*/
+.three{
+    width: 100%;
+    background: url(../images/bg4.jpg) no-repeat center;
+}
+.three .three-c {
+    height: 577px;
+    padding-top: 200px;
+    position: relative;
+    background: url(../images/bga4.jpg) no-repeat;
+}
+.three .three-c ul{
+    width: 1200px;
+    margin-left: -100px;
+    text-align: center;
+}
+.three-cl,.three-cm,.three-cr{
+    display: inline-block;
+    margin: 0 22px;
+}
+.three .three-c ul a{
+    display: block;
+    width: 300px;
+    height: 360px;
+    position: relative;
+}
+.three .three-c ul a em{
+    display: block;
+    margin: 13px 60px 0 60px;
+    width: 158px;
+    height: 60px;
+    background: url(../images/spr.png) no-repeat -700px -810px;
+    position: absolute;
+    bottom: -120px;
+}
+.three-cl{
+    background: url(../images/spr.png) no-repeat 0px 0px;
+}
+.three-cm{
+    background: url(../images/spr.png) no-repeat -600px 0px;
+}
+/*弹框7*/
+.three-cm .decla .decla1{
+    width: 500px;
+    height: 108px;
+    background: url(../images/nspr.png) no-repeat -430px -900px;
+    position: absolute;
+    top: 125px;
+    left: 300px;
+}
+.three-cm .decla .decla2{
+    display: block;
+    height: 43px;
+    width: 43px;
+    background: url(../images/nspr.png) no-repeat -847px -690px;
+    position: absolute;
+    top: 80px;
+    right: 176px;
+}
+.three-cm .decla .decla3{
+    padding-left: 260px;
+    width: 430px;
+    height: 210px;
+    overflow: auto;
+    position: absolute;
+    top: 240px;
+}
+.three-cm .decla .decla3 .box{
+    width: 400px;
+    color: #595959;
+    font-size: 16px;
+    line-height: 24px;
+}
+.three-cm .decla .decla3 .box h3{
+    font-size: 16px;
+    color: #e45871;
+    padding-top: 10px;
+    text-align: left;
+}
+.three-cm .decla .decla3 .box p{
+    text-indent: 2em;
+    padding-top: 10px;
+    text-align: left;
+}
+/*弹框7结束*/
+.three-cr{
+    background: url(../images/spr.png) no-repeat -300px 0px;
+}
+/*弹框8*/
+.three-cr .declas .declas1{
+    width: 490px;
+    height: 112px;
+    background: url(../images/nspr.png) no-repeat -10px -1010px;
+    position: absolute;
+    top: 125px;
+    left: 300px;
+}
+.three-cr .declas .declas2{
+    display: block;
+    height: 43px;
+    width: 43px;
+    background: url(../images/nspr.png) no-repeat -847px -690px;
+    position: absolute;
+    top: 80px;
+    right: 176px;
+}
+.three-cr .declas .declas3{
+    padding-left: 260px;
+    width: 430px;
+    height: 210px;
+    overflow: auto;
+    position: absolute;
+    top: 240px;
+}
+.three-cr .declas .declas3 .box{
+    width: 400px;
+    color: #595959;
+    font-size: 16px;
+    line-height: 24px;
+}
+.three-cr .declas .declas3 .box h3{
+    font-size: 16px;
+    color: #e45871;
+    padding-top: 10px;
+    text-align: left;
+}
+.three-cr .declas .declas3 .box p{
+    text-indent: 2em;
+    padding-top: 10px;
+    text-align: left;
+}
+/*弹框8结束*/
+.three .three-c a{
+    color: #f96e7c;
+    font-size: 28px;
+    position: absolute;
+    bottom: 44px;
+}
+/*叁 结束*/
+/*footer开始*/
+.footer{
+    width: 100%;
+    height: 132px;
+    background-color: #140e02;
+}
+.footer .footer-c{
+    text-align: center;
+    padding: 30px 0;
+}
+.footer .footer-c ul{
+    padding-left: 160px;
+    height: 24px;
+}
+.footer .footer-c ul li{
+    float: left;
+    font-size: 12px;
+    height: 24px;
+    line-height: 24px;
+    margin: 0 2px;
+    color: #322d26;
+}
+.footer ul li a,.footer span a,.footer span{
+    font-size: 12px;
+    color: #322d26;
+}
+.footer ul li a:hover,.footer span a:hover{
+    color: #999;
+    text-decoration: underline;
+}
+.footer .footer-c span{
+    display: block;
+    height: 24px;
+    line-height: 24px;
+}
+/*footer结束*/

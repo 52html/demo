@@ -1,0 +1,2 @@
+// JavaScript Document
+var txtUrl=['《御龙在天》新服【龙生九子】，于4月28日（周五）下午16:00 震撼开启！','http://yl.qq.com/webplat/info/news_version3/118/430/432/m280/201704/577015.shtml','http://ossweb-img.qq.com/upload/gameact/topic/592/1405326522_1436653066_17778_EId_3033_Value_local.jpg','http://ossweb-img.qq.com/upload/gameact/topic/592/1405326522_1436653066_17778_EId_3034_Value_local.jpg']/*  |xGv00|dc261f10bb40e0d4bbf57cd0b7d1ae37 */

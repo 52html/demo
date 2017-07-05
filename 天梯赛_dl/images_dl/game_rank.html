@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<!-- saved from url=(0087)http://ossweb-img.qq.com/images/js/topfiles/ost1410/game_rank.htm?rd=0.1799001865876102 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=GBK">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="all">
+<meta name="author" content="Tencent-TGideas">
+<meta name="copyright" content="Tencent">
+<meta name="description" content="腾讯游戏排行榜">
+<meta name="keywords" content="腾讯游戏排行榜">
+<title>腾讯游戏排行榜 - 腾讯游戏用心创造快乐</title>
+<style>
+  body{
+    padding: 7px 0 0 0;
+    margin: 0;
+  }
+    .ost_rank{
+      position: absolute;
+      width: 698px;
+      height: 456px; /* add 79 */
+      font-size: 12px;
+      line-height: 1.5;
+      font-family: "\5b8b\4f53",sans-serif;
+      color: #999;
+      border: 1px solid #ccc;
+      background: #fff;
+    }
+    .ost_rank:before,.ost_rank .before,
+    .ost_rank:after,.ost_rank .after{
+      position:absolute;
+      display:inline-block;
+      width:0;
+      height:0;
+      overflow:hidden;
+      line-height:0;
+      font-size:0;
+      vertical-align:middle;
+      content:"";
+      border-top:0 none;
+      _border-top-color: #dddddd;
+      _border-bottom-color: #dddddd;
+      _filter: chroma( color = #dddddd);
+    }
+    .ost_rank:before,.ost_rank .before{
+      border-bottom:7px solid #CCC;
+      border-left:7px dashed transparent;
+      border-right:7px dashed transparent;
+      right:1px;
+      top:-7px
+    }
+    .ost_rank:after,.ost_rank .after{
+      border-bottom:6px solid #ffffff;
+      border-left:6px dashed transparent;
+      border-right:6px dashed transparent;
+      right:2px;
+      top:-6px
+    }
+    .ost_rank a{
+      color: #707e91;
+      text-decoration: none;
+    }
+    .ost_rank a:hover{
+      color: #ff4e00;
+      text-decoration: underline;
+    }
+    .ost_rank .icon-font{
+      font-family: arial;
+      font-style: normal;
+      font-size: 16px;
+      line-height: 18px;
+    }
+    /* ==== rank col ==== */
+    .ost_rank_col{
+      float: left;
+      width: 212px;
+      height: 422px;
+      padding: 0 10px;
+      margin: 17px 0 8px;
+      border-left: 1px solid #e2e2e2;
+      margin-left: -1px;
+    }
+    .ost_rank_col .col-head,
+    .ost_rank_col .col-head2{
+      float: left;
+      width: 207px;
+      padding-right: 5px;
+      padding-bottom: 2px;
+      height: 18px;
+    }
+    .ost_rank_col .col-head{
+      border-bottom: 1px solid #e5e5e5;
+    }
+    .ost_rank_col .col-body{
+      float: left;
+    }
+    .ost_rank_col .rank-title{
+      display: inline;
+      float: left;
+      margin: 0;
+      padding: 0;
+      font-size: 12px;
+      color: #555;
+    }
+    .ost_rank_col .rank-more{
+      float: right;
+    }
+    /* rank list */
+    .ost_rank_col .rank-list{
+      float: left;
+      list-style: none;
+      padding: 9px 0 0;
+      margin: 0;
+    }
+    .ost_rank_col .rank-item,.ost_rank_col .rank-head{
+      float: left;
+      width: 212px;
+      overflow: visible;
+      padding: 0;
+    }
+    .ost_rank_col .rank-head{
+      height: 27px;
+    }
+    .ost_rank_col .current .rank-game-cover{
+      display: block;
+    }
+    .ost_rank_col .current .ctip-text{
+      display: none;
+    }
+    .ost_rank_col .current .rank-order-color,.ost_rank_col .current .rank-order-gray{
+      position: relative;
+      z-index: 10;
+      margin-bottom: -14px;
+    }
+    .ost_rank_col .rank-order-hd{
+      float: left;
+      width: 33px;
+    }
+    .ost_rank_col .rank-name-hd{
+      float: left;
+      width: 170px;
+    }
+    .ost_rank_col .rank-game-data{
+      height: 18px;
+      overflow: hidden;
+    }
+    .ost_rank_col .rank-order-color,
+    .ost_rank_col .rank-order-gray{
+      float: left;
+      width: 12px;
+      height: 12px;
+      margin: 2px 15px 0 4px;
+      line-height: 12px;
+      text-align: center;
+    }
+    .ost_rank_col .rank-order-gray{
+      border:1px solid #999;
+      background: #fff;
+    }
+    .ost_rank_col .rank-order-color{
+      color: #fff;
+      border:1px solid #ff4e00;
+      background: #ff4e00;
+    }
+    .ost_rank_col .rank-name-game{
+      display: inline;
+      float: left;
+      padding-bottom: 9px;
+      _padding-bottom: 7px;
+    }
+    /* ==== rank tip ==== */
+    .icon-home,
+    .icon-download,
+    .icon-home2,
+    .icon-ios,
+    .icon-android{
+      display: inline-block;
+      font-size: 0.1em;
+      margin: 0 5px;
+      vertical-align: top;
+      background-image: url(//ossweb-img.qq.com/images/js/topfiles/ost1410/images/ost_rank_sp.png);
+      background-repeat: no-repeat;
+    }
+    .icon-home,
+    .icon-download{
+      width: 13px;
+      height: 13px;
+    }
+    .icon-home{
+      background-position: 0 0;
+    }
+    .game-link:hover .icon-home{
+      background-position: 0 -17px;
+    }
+    .icon-download{
+      background-position: -14px 0;
+    }
+    .game-link:hover .icon-download{
+      background-position: -14px -17px;
+    }
+    .icon-home2,
+    .icon-ios,
+    .icon-android{
+      width: 15px;
+      height: 16px;
+      cursor: pointer;
+    }
+    .icon-home2{
+      background-position: -28px 0;
+    }
+    .game-link:hover .icon-home2{
+      background-position: -28px -17px;
+    }
+    .icon-ios{
+      background-position: -44px 0;
+    }
+    .game-link:hover .icon-ios{
+      background-position: -44px -17px;
+    }
+    .icon-android{
+      background-position: -60px 0;
+    }
+    .game-link:hover .icon-android{
+      background-position: -60px -17px;
+    }
+    .rank-game-cover{
+      display: none;
+      position: relative;
+      width: 194px;
+      height: 82px;
+      margin-left: 4px;
+      overflow: hidden;
+      padding: 1px;
+      border: 1px solid #ccc;
+      background: #fff;
+    }
+    .rank-game-cover .game-meta,
+    .rank-game-cover .game-meta2{
+      position: absolute;
+      bottom: 1px;
+      _bottom:0;
+      left: 1px;
+      margin: 0;
+      padding: 0;
+      width: 194px;
+      overflow: hidden;
+      background-color: rgba(0,0,0,0.75);
+      filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#AF000000,endcolorstr=#AF000000);
+    }
+    .rank-game-cover .game-meta{
+      height: 28px;
+    }
+    .rank-game-cover .game-meta2{
+      height: 28px;
+    }
+    .rank-game-cover .game-meta .game-link{
+      float: left;
+      width: 97px;
+      height: 13px;
+      line-height: 13px;
+      padding: 7px 0 8px;
+      color: #aaa;
+      text-align: center;
+      cursor: pointer;
+    }
+    .rank-game-cover .game-meta .game-link:hover{
+      color: #ff4e00;
+    }
+    .rank-game-cover .game-meta2 .game-link{
+      float: left;
+      width: 64px;
+      border-left: 1px solid #707070;
+      margin-left: -1px;
+      height: 16px;
+      line-height: 16px;
+      padding: 6px 0 6px;
+      text-align: center;
+    }
+</style>
+<!-- 设计：leottliu | 重构：karinfeng | 创建时间：14-10-10 | 团队博客：http://tgideas.qq.com -->
+</head>
+<body>
+<div class="ost_rank">
+<span class="before"></span>
+<span class="after"></span>
+<!-- new game -->
+<div class="ost_rank_col" id="rank_control1">
+  <div class="col-head">
+    <h2 class="rank-title">新游排行榜</h2>
+    <a href="http://ossweb-img.qq.com/images/js/topfiles/ost1410/gmap.htm" target="_blank" class="rank-more" onclick="pgvSendClick({hottag:&#39;gamerank.new.more&#39;})">更多<i class="icon-font">&#187;</i></a>
+  </div>
+  <div class="col-body">
+    <ul class="rank-list">
+      <li class="rank-head"><span class="rank-order-hd">排名</span><span class="rank-name-hd">游戏</span></li>
+      <li class="rank-item current">
+        <span class="rank-order-color">1</span>
+        <div class="rank-name-game cover-tip">
+          <a class="ctip-text" href="http://t7.qq.com/?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" onclick="pgvSendClick({hottag:&#39;gamerank.new.top1.link&#39;})">刀锋铁骑</a>
+          <div class="rank-game-cover cover-bottom" style="">
+            <img class="game-img" src="./t7-2.jpg" width="194" height="82" alt="">
+            <p class="game-meta"><a href="http://t7.qq.com/?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.new.top1.official&#39;})"><i class="icon-home"></i>进入官网</a><a href="http://t7.qq.com/main.shtml?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.new.top1.download&#39;})"><i class="icon-download"></i>下载游戏</a></p>
+          </div>
+        </div>
+      </li>
+      <li class="rank-item">
+        <span class="rank-order-color">2</span>
+        <div class="rank-name-game cover-tip">
+          <a class="ctip-text" href="http://wt.qq.com/?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" onclick="pgvSendClick({hottag:&#39;gamerank.new.top2.link&#39;})">战争雷霆</a>
+          <div class="rank-game-cover cover-bottom" style="">
+            <img class="game-img" src="./wt-2.jpg" width="194" height="82" alt="">
+            <p class="game-meta"><a href="http://wt.qq.com/?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.new.top2.official&#39;})"><i class="icon-home"></i>进入官网</a><a href="http://wt.qq.com/web201507/download.shtml?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.new.top2.download&#39;})"><i class="icon-download"></i>下载游戏</a></p>
+          </div>
+        </div>
+      </li>
+      <li class="rank-item">
+        <span class="rank-order-color">3</span>
+        <div class="rank-name-game cover-tip">
+          <a class="ctip-text" href="http://mxd2.qq.com/?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" onclick="pgvSendClick({hottag:&#39;gamerank.new.top3.link&#39;})">冒险岛2</a>
+          <div class="rank-game-cover cover-bottom" style="">
+            <img class="game-img" src="./mxd2-2.jpg" width="194" height="82" alt="">
+            <p class="game-meta"><a href="http://mxd2.qq.com/?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.new.top3.official&#39;})"><i class="icon-home"></i>进入官网</a><a href="http://mxd2.qq.com/?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.new.top3.download&#39;})"><i class="icon-download"></i>下载游戏</a></p>
+          </div>
+        </div>
+      </li>
+      <li class="rank-item">
+        <span class="rank-order-gray">4</span>
+        <div class="rank-name-game cover-tip">
+          <a class="ctip-text" href="http://mx.qq.com/?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" onclick="pgvSendClick({hottag:&#39;gamerank.new.top4.link&#39;})">勇者大冒险</a>
+          <div class="rank-game-cover cover-bottom" style="">
+            <img class="game-img" src="./mx-2.jpg" width="194" height="82" alt="">
+            <p class="game-meta"><a href="http://mx.qq.com/?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.new.top4.official&#39;})"><i class="icon-home"></i>进入官网</a><a href="http://mx.qq.com/download.shtml?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.new.top4.download&#39;})"><i class="icon-download"></i>下载游戏</a></p>
+          </div>
+        </div>
+      </li>
+      <li class="rank-item">
+        <span class="rank-order-gray">5</span>
+        <div class="rank-name-game cover-tip">
+          <a class="ctip-text" href="http://omd.qq.com/?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" onclick="pgvSendClick({hottag:&#39;gamerank.new.top5.link&#39;})">兽人必须死</a>
+          <div class="rank-game-cover cover-bottom" style="">
+            <img class="game-img" src="./omd-2.jpg" width="194" height="82" alt="">
+            <p class="game-meta"><a href="http://omd.qq.com/?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.new.top5.official&#39;})"><i class="icon-home"></i>进入官网</a><a href="http://omd.qq.com/?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.new.top5.download&#39;})"><i class="icon-download"></i>下载游戏</a></p>
+          </div>
+        </div>
+      </li>
+      <li class="rank-item">
+        <span class="rank-order-gray">6</span>
+        <div class="rank-name-game cover-tip">
+          <a class="ctip-text" href="http://rf.qq.com/?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" onclick="pgvSendClick({hottag:&#39;gamerank.new.top6.link&#39;})">火源计划</a>
+          <div class="rank-game-cover cover-bottom" style="">
+            <img class="game-img" src="./hyjh-2.jpg" width="194" height="82" alt="">
+            <p class="game-meta"><a href="http://rf.qq.com/?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.new.top6.official&#39;})"><i class="icon-home"></i>进入官网</a><a href="http://rf.qq.com/?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.new.top6.download&#39;})"><i class="icon-download"></i>下载游戏</a></p>
+          </div>
+        </div>
+      </li>
+      <li class="rank-item">
+        <span class="rank-order-gray">7</span>
+
+        <div class="rank-name-game cover-tip">
+          <a class="ctip-text" href="http://poe.qq.com/?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" onclick="pgvSendClick({hottag:&#39;gamerank.new.top7.link&#39;})">流放之路</a>
+          <div class="rank-game-cover cover-bottom" style="">
+            <img class="game-img" src="./lfzl-2.jpg" width="194" height="82" alt="">
+            <p class="game-meta"><a href="http://poe.qq.com/?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.new.top7.official&#39;})"><i class="icon-home"></i>进入官网</a><a href="http://poe.qq.com/download.shtml?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.new.top7.download&#39;})"><i class="icon-download"></i>下载游戏</a></p>
+          </div>
+        </div>
+      </li>
+      <li class="rank-item">
+        <span class="rank-order-gray">8</span>
+
+        <div class="rank-name-game cover-tip">
+          <a class="ctip-text" href="http://ds.qq.com/main.shtml?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" onclick="pgvSendClick({hottag:&#39;gamerank.new.top8.link&#39;})">全职大师</a>
+          <div class="rank-game-cover cover-bottom" style="">
+            <img class="game-img" src="./qzds-2.jpg" width="194" height="82" alt="">
+            <p class="game-meta"><a href="http://ds.qq.com/main.shtml?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.new.top8.official&#39;})"><i class="icon-home"></i>进入官网</a><a href="http://ds.qq.com/main.shtml?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.new.top8.download&#39;})"><i class="icon-download"></i>下载游戏</a></p>
+          </div>
+        </div>
+      </li>
+      <li class="rank-item">
+        <span class="rank-order-gray">9</span>
+        <div class="rank-name-game cover-tip">
+          <a class="ctip-text" href="http://qqgame.qq.com/app/gamedetail_10542.shtml?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" onclick="pgvSendClick({hottag:&#39;gamerank.new.top9.link&#39;})">蛇蛇争霸</a>
+          <div class="rank-game-cover cover-top" style="">
+            <img class="game-img" src="./sszb-2.jpg" width="194" height="82" alt="">
+            <p class="game-meta"><a href="http://qqgame.qq.com/app/gamedetail_10542.shtml?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.new.top9.official&#39;})"><i class="icon-home"></i>进入官网</a><a href="http://qqgame.qq.com/app/gamedetail_10542.shtml?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.new.top9.download&#39;})"><i class="icon-download"></i>下载游戏</a></p>
+          </div>
+        </div>
+      </li>
+      <li class="rank-item">
+        <span class="rank-order-gray">10</span>
+        <div class="rank-name-game cover-tip">
+          <a class="ctip-text" href="http://qqgame.qq.com/app/gamedetail_10518.shtml?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" onclick="pgvSendClick({hottag:&#39;gamerank.new.top10.link&#39;})">斗罗大陆</a>
+          <div class="rank-game-cover cover-top" style="">
+            <img class="game-img" src="./dldl-2.jpg" width="194" height="82" alt="">
+            <p class="game-meta">
+              <a href="http://qqgame.qq.com/app/gamedetail_10518.shtml?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.new.top10.official&#39;})"><i class="icon-home"></i>进入官网</a>
+              <a href="http://qqgame.qq.com/app/gamedetail_10518.shtml?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.new.top10.download&#39;})"><i class="icon-download"></i>下载游戏</a></p>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<!-- hot game -->
+<div class="ost_rank_col" id="rank_control2">
+  <div class="col-head">
+    <h2 class="rank-title">热门排行榜</h2>
+    <a href="http://ossweb-img.qq.com/images/js/topfiles/ost1410/gmap.htm" target="_blank" class="rank-more" onclick="pgvSendClick({hottag:&#39;gamerank.hot.more&#39;})">更多<i class="icon-font">&#187;</i></a>
+  </div>
+  <div class="col-body">
+    <ul class="rank-list">
+      <li class="rank-head"><span class="rank-order-hd">排名</span><span class="rank-name-hd">游戏</span></li>
+      <li class="rank-item current">
+        <span class="rank-order-color">1</span>
+        <div class="rank-name-game cover-tip">
+          <a class="ctip-text" href="http://lol.qq.com/main.shtml?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" onclick="pgvSendClick({hottag:&#39;gamerank.hot.top1.link&#39;})">英雄联盟</a>
+          <div class="rank-game-cover cover-bottom" style="">
+            <img class="game-img" src="./lol-2.jpg" width="194" height="82" alt="">
+            <p class="game-meta"><a href="http://lol.qq.com/main.shtml?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.hot.top1.official&#39;})"><i class="icon-home"></i>进入官网</a><a href="http://ossweb-img.qq.com/images/js/topfiles/ost1410/http://lol.qq.com/download.shtml?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.hot.top1.download&#39;})"><i class="icon-download"></i>下载游戏</a></p>
+          </div>
+        </div>
+      </li>
+      <li class="rank-item">
+        <span class="rank-order-color">2</span>
+        <div class="rank-name-game cover-tip">
+          <a class="ctip-text" href="http://dnf.qq.com/?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" onclick="pgvSendClick({hottag:&#39;gamerank.hot.top2.link&#39;})">地下城与勇士</a>
+          <div class="rank-game-cover cover-bottom" style="">
+            <img class="game-img" src="./dnf-2.jpg" width="194" height="82" alt="">
+            <p class="game-meta"><a href="http://dnf.qq.com/?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.hot.top2.official&#39;})"><i class="icon-home"></i>进入官网</a><a href="http://dnf.qq.com/web2013/down.shtml?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.hot.top2.download&#39;})"><i class="icon-download"></i>下载游戏</a></p>
+          </div>
+        </div>
+      </li>
+      <li class="rank-item">
+        <span class="rank-order-color">3</span>
+        <div class="rank-name-game cover-tip">
+          <a class="ctip-text" href="http://cf.qq.com/?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" onclick="pgvSendClick({hottag:&#39;gamerank.hot.top3.link&#39;})">穿越火线</a>
+          <div class="rank-game-cover cover-bottom" style="">
+            <img class="game-img" src="./cf-2.jpg" width="194" height="82" alt="">
+            <p class="game-meta"><a href="http://cf.qq.com/?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.hot.top3.official&#39;})"><i class="icon-home"></i>进入官网</a><a href="http://cf.qq.com/web201105/download.shtml?ADTAG=index.btn.xzyx&amp;ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.hot.top3.download&#39;})"><i class="icon-download"></i>下载游戏</a></p>
+          </div>
+        </div>
+      </li>
+      <li class="rank-item">
+        <span class="rank-order-gray">4</span>
+        <div class="rank-name-game cover-tip">
+          <a class="ctip-text" href="http://x5.qq.com/?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" onclick="pgvSendClick({hottag:&#39;gamerank.hot.top4.link&#39;})">QQ炫舞</a>
+          <div class="rank-game-cover cover-bottom" style="">
+            <img class="game-img" src="./x5-2.jpg" width="194" height="82" alt="">
+            <p class="game-meta"><a href="http://x5.qq.com/?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.hot.top4.official&#39;})"><i class="icon-home"></i>进入官网</a><a href="http://x5.qq.com/web201403/down.shtml?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.hot.top4.download&#39;})"><i class="icon-download"></i>下载游戏</a></p>
+          </div>
+        </div>
+      </li>
+      <li class="rank-item">
+        <span class="rank-order-gray">5</span>
+        <div class="rank-name-game cover-tip">
+          <a class="ctip-text" href="http://eafifa.qq.com/?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" onclick="pgvSendClick({hottag:&#39;gamerank.hot.top5.link&#39;})">FIFA Online3 </a>
+          <div class="rank-game-cover cover-bottom" style="">
+            <img class="game-img" src="./fifa-2.jpg" width="194" height="82" alt="">
+            <p class="game-meta"><a href="http://eafifa.qq.com/?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.hot.top5.official&#39;})"><i class="icon-home"></i>进入官网</a><a href="http://eafifa.qq.com/web201404/download.shtml?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.hot.top5.download&#39;})"><i class="icon-download"></i>下载游戏</a></p>
+          </div>
+        </div>
+      </li>
+      <li class="rank-item">
+        <span class="rank-order-gray">6</span>
+        <div class="rank-name-game cover-tip">
+          <a class="ctip-text" href="http://speed.qq.com/main.shtml?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" onclick="pgvSendClick({hottag:&#39;gamerank.hot.top6.link&#39;})">QQ飞车</a>
+          <div class="rank-game-cover cover-bottom" style="">
+            <img class="game-img" src="./speed-2.jpg" width="194" height="82" alt="">
+            <p class="game-meta"><a href="http://speed.qq.com/main.shtml?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.hot.top6.official&#39;})"><i class="icon-home"></i>进入官网</a><a href="http://speed.qq.com/?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.hot.top6.download&#39;})"><i class="icon-download"></i>下载游戏</a></p>
+          </div>
+        </div>
+      </li>
+      <li class="rank-item">
+        <span class="rank-order-gray">7</span>
+        <div class="rank-name-game cover-tip">
+          <a class="ctip-text" href="http://nz.qq.com/main.shtml?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" onclick="pgvSendClick({hottag:&#39;gamerank.hot.top7.link&#39;})">逆战</a>
+          <div class="rank-game-cover cover-bottom" style="">
+            <img class="game-img" src="./nz-2.jpg" width="194" height="82" alt="">
+            <p class="game-meta"><a href="http://nz.qq.com/main.shtml?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.hot.top7.official&#39;})"><i class="icon-home"></i>进入官网</a><a href="http://nz.qq.com/download.shtml?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.hot.top7.download&#39;})"><i class="icon-download"></i>下载游戏</a></p>
+          </div>
+        </div>
+      </li>
+      <li class="rank-item">
+        <span class="rank-order-gray">8</span>
+        <div class="rank-name-game cover-tip">
+          <a class="ctip-text" href="http://wuxia.qq.com/?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" onclick="pgvSendClick({hottag:&#39;gamerank.hot.top8.link&#39;})">天涯明月刀</a>
+          <div class="rank-game-cover cover-bottom" style="">
+            <img class="game-img" src="./wuxia-2.jpg" width="194" height="82" alt="">
+            <p class="game-meta"><a href="http://wuxia.qq.com/?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.hot.top8.official&#39;})"><i class="icon-home"></i>进入官网</a><a href="http://wuxia.qq.com/?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.hot.top8.download&#39;})"><i class="icon-download"></i>下载游戏</a></p>
+          </div>
+        </div>
+      </li>
+      <li class="rank-item">
+        <span class="rank-order-gray">9</span>
+        <div class="rank-name-game cover-tip">
+          <a class="ctip-text" href="http://cos.qq.com/?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" onclick="pgvSendClick({hottag:&#39;gamerank.hot.top9.link&#39;})">英魂之刃</a>
+          <div class="rank-game-cover cover-top" style="">
+            <img class="game-img" src="./yhzr-2.jpg" width="194" height="82" alt="">
+            <p class="game-meta"><a href="http://cos.qq.com/?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.hot.top9.official&#39;})"><i class="icon-home"></i>进入官网</a><a href="http://cos.qq.com/?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.hot.top9.download&#39;})"><i class="icon-download"></i>下载游戏</a></p>
+          </div>
+        </div>
+      </li>
+      <li class="rank-item">
+        <span class="rank-order-gray">10</span>
+        <div class="rank-name-game cover-tip">
+          <a class="ctip-text" href="http://qqgame.qq.com/app/gamedetail_10498.shtml?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" onclick="pgvSendClick({hottag:&#39;gamerank.hot.top10.link&#39;})">梦幻恋舞</a>
+          <div class="rank-game-cover cover-top" style="">
+            <img class="game-img" src="./mhdw-2.jpg" width="194" height="82" alt="">
+            <p class="game-meta"><a href="http://qqgame.qq.com/app/gamedetail_10498.shtml?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.hot.top10.official&#39;})"><i class="icon-home"></i>进入官网</a><a href="http://qqgame.qq.com/app/gamedetail_10498.shtml?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.hot.top10.download&#39;})"><i class="icon-download"></i>下载游戏</a></p>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<!-- mobile game -->
+<div class="ost_rank_col" id="rank_control3">
+  <div class="col-head">
+    <h2 class="rank-title">新品手游排行榜</h2>
+    <a href="http://ossweb-img.qq.com/images/js/topfiles/ost1410/gmap.htm" target="_blank" class="rank-more" onclick="pgvSendClick({hottag:&#39;gamerank.newm.more&#39;})">更多<i class="icon-font">&#187;</i></a>
+  </div>
+  <div class="col-body">
+    <ul class="rank-list">
+      <li class="rank-head"><span class="rank-order-hd">排名</span><span class="rank-name-hd">游戏</span></li>
+      <li class="rank-item">
+        <span class="rank-order-color">1</span>
+        <div class="rank-name-game cover-tip">
+          <a class="ctip-text" href="http://mhzx.qq.com/?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" onclick="pgvSendClick({hottag:&#39;gamerank.newm.top1.link&#39;})">梦幻诛仙</a>
+          <div class="rank-game-cover cover-bottom" style="">
+            <img class="game-img" src="./mhzx-2.jpg" width="194" height="82" alt="">
+            <p class="game-meta2"><a href="http://mhzx.qq.com/?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.newm.top1.official&#39;})"><i class="icon-home2"></i></a><a href="http://itunes.apple.com/cn/app/id1106936921?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.newm.top1.ios&#39;})"><i class="icon-ios"></i></a><a href="http://mhzx.qq.com/?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.newm.top1.android&#39;})"><i class="icon-android"></i></a></p>
+          </div>
+        </div>
+      </li>
+      <li class="rank-item">
+        <span class="rank-order-color">2</span>
+        <div class="rank-name-game cover-tip">
+          <a class="ctip-text" href="http://ylzt.qq.com/?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" onclick="pgvSendClick({hottag:&#39;gamerank.newm.top2.link&#39;})">御龙在天手游</a>
+          <div class="rank-game-cover cover-bottom" style="">
+            <img class="game-img" src="./ylsy-2.jpg" width="194" height="82" alt="">
+            <p class="game-meta2"><a href="http://ylzt.qq.com/?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.newm.top2.official&#39;})"><i class="icon-home2"></i></a><a href="http://ylzt.qq.com/?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.newm.top2.ios&#39;})"><i class="icon-ios"></i></a><a href="http://ylzt.qq.com/?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.newm.top2.android&#39;})"><i class="icon-android"></i></a></p>
+          </div>
+        </div>
+      </li>
+      <li class="rank-item">
+        <span class="rank-order-color">3</span>
+        <div class="rank-name-game cover-tip">
+          <a class="ctip-text" href="http://zt.qq.com/?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" onclick="pgvSendClick({hottag:&#39;gamerank.newm.top3.link&#39;})">征途</a>
+          <div class="rank-game-cover cover-bottom" style="">
+            <img class="game-img" src="./ztsy-2.jpg" width="194" height="82" alt="">
+            <p class="game-meta2"><a href="http://zt.qq.com/?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.newm.top3.official&#39;})"><i class="icon-home2"></i></a><a href="http://zt.qq.com/?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.newm.top3.ios&#39;})"><i class="icon-ios"></i></a><a href="http://zt.qq.com/?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.newm.top3.android&#39;})"><i class="icon-android"></i></a></p>
+          </div>
+        </div>
+      </li>
+      <li class="rank-item">
+        <span class="rank-order-gray">4</span>
+        <div class="rank-name-game cover-tip">
+          <a class="ctip-text" href="http://hyrz.qq.com/?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" onclick="pgvSendClick({hottag:&#39;gamerank.newm.top4.link&#39;})">火影忍者</a>
+          <div class="rank-game-cover cover-bottom" style="">
+            <img class="game-img" src="./hyrz-2.jpg" width="194" height="82" alt="">
+            <p class="game-meta2"><a href="http://hyrz.qq.com/?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.newm.top4.official&#39;})"><i class="icon-home2"></i></a><a href="http://hyrz.qq.com/?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.newm.top4.ios&#39;})"><i class="icon-ios"></i></a><a href="http://hyrz.qq.com/?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.newm.top4.android&#39;})"><i class="icon-android"></i></a></p>
+          </div>
+        </div>
+      </li>
+      <li class="rank-item">
+        <span class="rank-order-gray">5</span>
+        <div class="rank-name-game cover-tip">
+          <a class="ctip-text" href="http://cr.qq.com/?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" onclick="pgvSendClick({hottag:&#39;gamerank.newm.top5.link&#39;})">皇室战争</a>
+          <div class="rank-game-cover cover-bottom" style="">
+            <img class="game-img" src="./hszz-2.jpg" width="194" height="82" alt="">
+            <p class="game-meta2"><a href="http://cr.qq.com/?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.newm.top5.official&#39;})"><i class="icon-home2"></i></a><a href="http://cr.qq.com/?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.newm.top5.ios&#39;})"><i class="icon-ios"></i></a><a href="http://cr.qq.com/?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.newm.top5.android&#39;})"><i class="icon-android"></i></a></p>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="col-head2">
+    <h2 class="rank-title">热门手游排行榜</h2>
+    <a href="http://ossweb-img.qq.com/images/js/topfiles/ost1410/gmap.htm" target="_blank" class="rank-more" onclick="pgvSendClick({hottag:&#39;gamerank.hotm.more&#39;})">更多<i class="icon-font">&#187;</i></a>
+  </div>
+  <div class="col-body">
+    <ul class="rank-list">
+      <li class="rank-item current">
+        <span class="rank-order-color">1</span>
+        <div class="rank-name-game cover-tip">
+          <a class="ctip-text" href="http://pvp.qq.com/?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" onclick="pgvSendClick({hottag:&#39;gamerank.hotm.top1.link&#39;})">王者荣耀</a>
+          <div class="rank-game-cover cover-bottom" style="">
+            <img class="game-img" src="./sgame-22.jpg" width="194" height="82" alt="">
+            <p class="game-meta2"><a href="http://pvp.qq.com/?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.hotm.top1.official&#39;})"><i class="icon-home2"></i></a><a href="http://pvp.qq.com/?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.hotm.top1.ios&#39;})"><i class="icon-ios"></i></a><a href="http://pvp.qq.com/?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.hotm.top1.android&#39;})"><i class="icon-android"></i></a></p>
+          </div>
+        </div>
+      </li>
+      <li class="rank-item">
+        <span class="rank-order-color">2</span>
+        <div class="rank-name-game cover-tip">
+          <a class="ctip-text" href="http://cfm.qq.com/?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" onclick="pgvSendClick({hottag:&#39;gamerank.hotm.top2.link&#39;})">穿越火线</a>
+          <div class="rank-game-cover cover-bottom" style="">
+            <img class="game-img" src="./cfsy-2.jpg" width="194" height="82" alt="">
+            <p class="game-meta2"><a href="http://cfm.qq.com/?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.hotm.top2.official&#39;})"><i class="icon-home2"></i></a><a href="http://cfm.qq.com/?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.hotm.top2.ios&#39;})"><i class="icon-ios"></i></a><a href="http://cfm.qq.com/?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.hotm.top2.android&#39;})"><i class="icon-android"></i></a></p>
+          </div>
+        </div>
+      </li>
+      <li class="rank-item">
+        <span class="rank-order-color">3</span>
+        <div class="rank-name-game cover-tip">
+          <a class="ctip-text" href="http://pao.qq.com/?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" onclick="pgvSendClick({hottag:&#39;gamerank.hotm.top3.link&#39;})">天天酷跑</a>
+          <div class="rank-game-cover cover-top" style="">
+            <img class="game-img" src="./pao-2.jpg" width="194" height="82" alt="">
+            <p class="game-meta2"><a href="http://pao.qq.com/?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.hotm.top3.official&#39;})"><i class="icon-home2"></i></a><a href="http://pao.qq.com/d/?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.hotm.top3.ios&#39;})"><i class="icon-ios"></i></a><a href="http://pao.qq.com/d/?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.hotm.top3.android&#39;})"><i class="icon-android"></i></a></p>
+          </div>
+        </div>
+      </li>
+      <li class="rank-item">
+        <span class="rank-order-gray">4</span>
+        <div class="rank-name-game cover-tip">
+          <a class="ctip-text" href="http://huanle.qq.com/mddz/index.shtml?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" onclick="pgvSendClick({hottag:&#39;gamerank.hotm.top4.link&#39;})">欢乐斗地主</a>
+          <div class="rank-game-cover cover-top" style="">
+            <img class="game-img" src="./huanle-2.jpg" width="194" height="82" alt="">
+            <p class="game-meta2"><a href="http://huanle.qq.com/mddz/index.shtml?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.hotm.top4.official&#39;})"><i class="icon-home2"></i></a><a href="http://itunes.apple.com/cn/app/huan-le-dou-zhu-qq-you-xi/id446324234?mt=8&amp;ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.hotm.top4.ios&#39;})"><i class="icon-ios"></i></a><a href="http://android.myapp.com/myapp/detail.htm?apkName=com.qqgame.hlddz&amp;ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.hotm.top4.android&#39;})"><i class="icon-android"></i></a></p>
+          </div>
+        </div>
+      </li>
+      <li class="rank-item">
+        <span class="rank-order-gray">5</span>
+        <div class="rank-name-game cover-tip">
+          <a class="ctip-text" href="http://mir.qq.com/?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" onclick="pgvSendClick({hottag:&#39;gamerank.hotm.top5.link&#39;})">热血传奇</a>
+          <div class="rank-game-cover cover-top" style="">
+            <img class="game-img" src="./mir-2.jpg" width="194" height="82" alt="">
+            <p class="game-meta2"><a href="http://mir.qq.com/?ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.hotm.top5.official&#39;})"><i class="icon-home2"></i></a><a href="http://mir.qq.com/d/index_down.html?device=iphone&amp;ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.hotm.top2.ios&#39;})"><i class="icon-ios"></i></a><a href="http://mir.qq.com/d/index_down.html?device=android&amp;ADTAG=media.innerenter.gameweb.gamelist" target="_blank" class="game-link" onclick="pgvSendClick({hottag:&#39;gamerank.hotm.top2.android&#39;})"><i class="icon-android"></i></a></p>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+</div>
+<script>
+  // getElementsByClass for
+    function getElementsByClassName(className, element) {
+      var children = (element || document).getElementsByTagName('*');
+      var elements = [];
+      for (var i = 0; i < children.length; i++) {
+        var child = children[i];
+        var classNames = child.className.split(' ');
+        for (var j = 0; j < classNames.length; j++) {
+          if (classNames[j] == className) {
+            elements.push(child);
+            break
+          }
+        }
+      }
+      return elements
+    };
+    // public
+    function addEventSimple(obj, evt, fn) {
+      if (obj.addEventListener) obj.addEventListener(evt, fn, false);
+      else if (obj.attachEvent) obj.attachEvent("on" + evt, fn)
+    };
+    // coverShow
+    var coverShow=function(id,cls,n,options){
+      this.container = document.getElementById(id);
+      //this.n = n;
+      this.item = getElementsByClassName(cls,this.container);
+      this.count = this.item.length;
+      this.setOptions(options);
+      this.index = n;
+      this.timer = null;
+      this.init()
+    };
+    coverShow.prototype={
+      init:function(){
+        this.item[this.index].className += " " + this.options.currCls;
+        for(i=0;i < this.item.length;i++){
+          (function(index,that){
+            addEventSimple(that.item[index], that.options.event, function() {
+              clearTimeout(that.timer);
+              that.timer = setTimeout(function() {
+                that.switchTo(index)
+              }, that.timeout)
+            })
+          })(i,this);
+        }
+      },
+      setOptions:function(options) {
+        this.options = {
+          timeout: 100,
+          currCls: "current",
+          event: "mouseover"
+        };
+      },
+      switchTo: function(n) {
+        clearTimeout(this.timer);
+        //n < 0 && (n = this.count - 1) || n >= this.count && (n = 0);
+        if (this.index == n) {
+          return
+        }
+        //console.log(this.index)
+        this.item[this.index].className = this.item[this.index].className.replace(this.options.currCls, "");
+        this.item[n].className = "rank-item " + this.options.currCls;
+        this.index=n;
+      }
+    };
+    var covershow1 = new coverShow("rank_control1","rank-item",0);
+    var covershow2 = new coverShow("rank_control2","rank-item",0);
+    var covershow3 = new coverShow("rank_control3","rank-item",5);
+</script>
+<script type="text/javascript">
+	//文件版本号,通过php设置为更新当天日期
+	var rankVersion = "2016121611";
+	
+	var Cookie = {};
+    Cookie.get = function(sName, sDefaultValue) {
+        var sRE = "(?:; |^)" + sName + "=([^;]*);?";
+        var oRE = new RegExp(sRE);
+        if (oRE.test(document.cookie)) {
+            return unescape(RegExp['$1'])
+        } else {
+            return sDefaultValue || null
+        }
+    };
+    Cookie.set = function(sName, sValue, iExpireSec, sDomain, sPath, bSecure) {
+        if (!sName) {
+            return
+        }
+        if (!sValue) {
+            sValue = ""
+        }
+        var str = sName + "=" + escape(sValue) + "; ";
+        if (!isNaN(iExpireSec)) {
+            var oDate = new Date();
+            oDate.setTime(oDate.getTime() + iExpireSec * 1000);
+            str += "expires=" + oDate.toGMTString() + "; "
+        }
+        if (sDomain) {
+            str += "domain=" + sDomain + "; "
+        }
+        if (sPath) {
+            str += "path=" + sPath + "; "
+        } else {
+            str += "path=/; "
+        }
+        if (bSecure) {
+            str += "secure"
+        }
+        document.cookie = str
+    };
+    Cookie.clear = function(sName) {
+        Cookie.set(sName, "", new Date(0), "qq.com", "/")
+    };
+	
+	var rankv = Cookie.get("rankv");
+	if (rankv == null || rankv == "undefined" || rankv != rankVersion) {    //cookie rankv不存在，或者不等于当前版本
+		Cookie.set("bRankChanged", "TRUE", 604800, "qq.com", "/");
+		Cookie.set("rankv", rankVersion, 604800, "qq.com", "/");
+	}
+ 
+</script>
+<script id="tcss_js" src="./ping_tcss_ied.js.下载"></script>
+<script>
+  jsnode = document.getElementById("tcss_js");
+  if( 'https:' == document.location.protocol ){
+      jsnode.src = "https://pingjs.qq.com/tcss.ping.https.js";
+  }else{
+      jsnode.src = "http://pingjs.qq.com/ping_tcss_ied.js";
+  }
+  jsnode.onload = function(){
+    if (typeof(pgvMain) == 'function') {
+      pgvMain("",{statIframe:true, virtualDomain: "game.qq.com"});
+    }
+  }
+</script>
+
+
+</body></html>

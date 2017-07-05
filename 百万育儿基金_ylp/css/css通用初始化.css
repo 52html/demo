@@ -1,0 +1,38 @@
+*,body,p,span,h2,h1,h3,h4,h5,h6,ul,li,ol,dd,dt,dl,input{
+	padding: 0;
+	margin: 0;
+}
+ul{
+	list-style: none;
+}
+input,img{
+	outline-style: none;
+	border: 0 none;
+
+}
+a{
+	text-decoration: none;
+	color: black;
+}
+
+.clearfix:after{
+	display: block;
+	content: ".";
+	height: 0;
+	line-height: 0;
+	visibility: hidden;
+	clear:both;
+}
+.clearfix{
+	zoom:1;
+}
+.w{
+	width: 1000px;
+	margin: 0 auto;
+}
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
